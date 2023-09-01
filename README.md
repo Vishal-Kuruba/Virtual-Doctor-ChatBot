@@ -4,7 +4,7 @@ Flask==0.11
 chatterbot==0.8.4
 SQLAlchemy==1.1.11
 
-#### A web implementation of [ChatterBot](https://github.com/gunthercox/ChatterBot) using Flask.
+#### Install all Dependencies with requirements.txt
 
 ## Local Setup:
  1. Open command prompt and locate folder. run 'pip install -r requirements.txt'
@@ -13,4 +13,4 @@ SQLAlchemy==1.1.11
  4. Demo will be live at http://localhost:5000/
 
 ## License
-This source is free to use, but ChatterBot does have a license.
+This source is free to use.
