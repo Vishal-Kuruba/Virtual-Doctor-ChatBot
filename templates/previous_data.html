@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+    <title>Title</title>
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+
+<form action="/logoutd" method="POST">
+    <div class="topnav">
+             <a><button type="submit" class="btn">logout</button></a>
+            <input type="hidden" name="email" value="{{a}}">
+    </div>
+    <center><div>{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+    {% endwith %}</div></center>
+
+    </form>
+
+<table>
+  <tr>
+    <th>Feature</th>
+    <th>Values</th>
+  </tr>
+  <tr>
+    <td>Name </td>
+    <td>{{ name }}</td>
+
+  </tr>
+  <tr>
+    <td>age  </td>
+    <td>{{ age }}</td>
+
+  </tr>
+    <tr>
+    <td>itching  </td>
+    <td>{{ itching  }}</td>
+
+  </tr>
+  <tr>
+    <td>skin_rash  </td>
+    <td>{{ skin_rash  }}</td>
+
+  </tr>
+    <tr>
+    <td>nodal_skin_eruptions   </td>
+    <td>{{ nodal_skin_eruptions   }}</td>
+
+  </tr>
+  <tr>
+    <td>continuous_sneezing   </td>
+    <td>{{ continuous_sneezing  }}</td>
+
+  </tr>
+    <tr>
+    <td>shivering  </td>
+    <td>{{ shivering  }}</td>
+
+  </tr>
+  <tr>
+    <td>chills   </td>
+    <td>{{ chills  }}</td>
+
+  </tr>
+    <tr>
+    <td>joint_pain  </td>
+    <td>{{ joint_pain  }}</td>
+
+  </tr>
+  <tr>
+    <td>stomach_pain   </td>
+    <td>{{ stomach_pain  }}</td>
+
+  </tr>
+    <tr>
+    <td>acidity  </td>
+    <td>{{ acidity  }}</td>
+
+  </tr>
+  <tr>
+    <td>ulcers_on_tongue   </td>
+    <td>{{ ulcers_on_tongue  }}</td>
+
+  </tr>
+    <tr>
+    <td>muscle_wasting  </td>
+    <td>{{ muscle_wasting  }}</td>
+
+  </tr>
+  <tr>
+    <td>vomiting   </td>
+    <td>{{ vomiting  }}</td>
+
+  </tr>
+    <tr>
+    <td>burning_micturition   </td>
+    <td>{{ burning_micturition  }}</td>
+
+  </tr>
+  <tr>
+    <td>Result   </td>
+    <td>{{ result   }}</td>
+
+  </tr>
+
+</table>
+<form action="/user_account" method="POST">
+
+
+            <input type="hidden" name="email" value="{{a}}">
+
+    </form>
+</body>
+</html>

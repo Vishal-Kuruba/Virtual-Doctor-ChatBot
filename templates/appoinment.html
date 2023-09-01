@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+  <form action="/appoinment" method="post">
+
+    <div class="container">
+        <label for="uname"><b>name</b></label>
+      <input type="text" placeholder="Enter Name" name="name" >
+
+      <label for="email"><b>doctor name</b></label>
+      <input type="text" placeholder="" name="doctor" >
+
+      <label for="Date and Time"><b>date time</b></label>
+      <input type="text" placeholder="Enter Date and Time" name="date_time" >
+
+        <label for="hospital"><b>hospital</b></label>
+        <input type="text" placeholder="" name="hospital" />
+
+        <button type="submit">Submit</button>
+
+
+    </div>
+
+  </form>
+{% endblock content %}

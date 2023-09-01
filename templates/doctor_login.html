@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<center><div  class="col-md-8">{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+    {% endwith %}
+    </div></center>
+<form action="/doctor_login" method="post">
+
+    <div class="container">
+      <label for="email"><b>Doctor name</b></label>
+      <input type="text" placeholder="Enter Email" name="email" >
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" >
+
+      <button type="submit">Login</button>
+      <label><b>New user</b></label>
+            <a href="/doctor_register" class ='btn2' type="submit">register</a>
+
+    </div>
+
+  </form>
+{% endblock content %}

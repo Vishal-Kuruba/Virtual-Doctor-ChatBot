@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+    <div class="topnav">
+
+         <form action="/logoutd" method="POST">
+             <a><button type="submit" class="btn">Sign out</button></a>
+         </form>
+            <a  href="/appoinment_details"><button class="active">appointment details</button></a>
+            <input type="hidden" name="email" value="{{a}}">
+    </div>
+    <center><div>{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+    {% endwith %}</div></center>
+
+
+
+<h2>Name : {{ b[0][1] }}</h2><br>
+<p>Email ID : {{ b[0][2] }}</p><br>
+<p>Password : {{ b[0][3] }}</p><br>
+<p>Gender : {{ b[0][4] }}</p><br>
+<p>Specialist : {{ b[0][5] }}</p><br>
+<p>Address : {{ b[0][7] }}</p>
+<a href="/doctor_livechat">chat</a>
+<form action="/doctor_account" method="POST">
+
+             <a><button type="submit" class="btn">Edit Details</button></a>
+            <input type="hidden" name="email" value="{{a}}">
+
+    </form>
+</body>
+</html>

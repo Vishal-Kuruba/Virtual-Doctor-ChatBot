@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='account.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <title>Title</title>
+</head>
+<body>
+<div class="topnav">
+    <a class="active" href></a>
+        <a class="active" href="/disease_predictor">disease_predictor</a>
+        <a class="active" href="/medicine">medicine</a>
+        <a class="active" href="/appoinment">appoinment</a>
+
+        <a class="active" href="/logout">logout</a>
+</div>
+
+ <center>{% with messages = get_flashed_messages() %}
+   {% if messages %}
+     <ul class="flashes">
+        {% for message in messages %}
+         <div class="message_flash">{{ message }}</div>
+        {% endfor %}
+    </ul>
+  {% endif %}
+ {% endwith %}</center>
+
+<div class="row">
+       {% for i in data %}
+    <div class="column">
+        <div class="card">
+
+            <h3>Name: {{i[1]}}</h3>
+            <p>Specialist: {{i[5]}}</p>
+            <p>Address: {{i[7]}}</p>
+            {% if i[6]== 'true' %}
+            <p><div class="foo green"></div>Online</p>
+            <a href="/livechat">chat</a>
+            {% else %}
+            <p><div class="foo grey"></div>Offline</p>
+            <a>not avilable</a>
+            {% endif %}
+
+
+    </div>
+    </div>
+
+
+    {% endfor %}
+   </div>
+
+<div class="callout">
+  <div class="callout-header"></div>
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+  <div class="callout-container">
+    <p><a href="/chatbot">chatbot</a> </p>
+  </div>
+</div>
+
+
+</body>
+</html>

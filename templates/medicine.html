@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='account.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <title>Title</title>
+</head>
+<body>
+<div class="topnav">
+    <a class="active" href></a>
+        <a class="active" href="/previous_data">history</a>
+    <a class="active" href="/logout">logout</a>
+</div>
+<center>{% with messages = get_flashed_messages() %}
+   {% if messages %}
+     <ul class="flashes">
+        {% for message in messages %}
+         <div class="message_flash">{{ message }}</div>
+        {% endfor %}
+    </ul>
+  {% endif %}
+ {% endwith %}</center>
+
+<div class="container">
+    <br>
+    <br>
+    <center>
+        <form action = '/predict' method = "post" enctype="multipart/form-data">
+
+            <label for="psw"><b></b></label> itching  <input type="text" placeholder="" name="itching" ><br>
+            <label for="psw"><b></b></label> skin_rash    <input type="text" placeholder="" name="skin_rash" ><br>
+            <label for="psw"><b></b></label> nodal_skin_eruptions  <input type="text" placeholder="" name="nodal_skin_eruptions" ><br>
+            <label for="psw"><b></b></label> continuous_sneezing   <input type="text" placeholder="" name="continuous_sneezing" ><br>
+            <label for="psw"><b></b></label> shivering   <input type="text" placeholder="" name="shivering" ><br>
+            <label for="psw"><b></b></label> chills   <input type="text" placeholder="" name="chills" ><br>
+            <label for="psw"><b></b></label> joint_pain   <input type="text" placeholder="" name="joint_pain" ><br>
+            <label for="psw"><b></b></label> stomach_pain  <input type="text" placeholder="" name="stomach_pain" ><br>
+            <label for="psw"<b></b></label> acidity   <input type="text" placeholder="" name="acidity" ><br>
+            <label for="psw"><b></b></label> ulcers_on_tongue   <input type="text" placeholder="" name="ulcers_on_tongue" ><br>
+            <label for="psw"><b></b></label> muscle_wasting   <input type="text" placeholder="" name="muscle_wasting" ><br>
+            <label for="psw"><b></b></label> vomiting   <input type="text" placeholder="" name="vomiting" ><br>
+            <label for="psw"><b></b></label> burning_micturition   <input type="text" placeholder="" name="burning_micturition" ><br>
+            <br>
+            <br>
+            <button type="submit">Predict</button>
+             </form></center>
+</div>
+</body>
+</html>

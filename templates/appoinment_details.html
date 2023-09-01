@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='account.css') }}">
+    <title>Title</title>
+</head>
+<body>
+
+ <div class="row">
+       {% for i in data %}
+  <div class="column">
+    <div class="card">
+
+            <h3>Name: {{i[0]}}</h3>
+            <p>doctor: {{i[1]}}</p>
+            <p>time: {{i[2]}}</p>
+            <p>Hospital: {{i[3]}}</p>
+
+
+
+    </div>
+    </div>
+
+
+    {% endfor %}
+   </div>
+</body>
+</html>

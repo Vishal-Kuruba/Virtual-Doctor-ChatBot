@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+  <form action="/doctor_register" method="post">
+
+    <div class="container">
+        <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Name" name="uname" >
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" >
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" >
+
+        <label for="gender"><b>gender</b></label>
+        <input type="text" placeholder="" name="gender" />
+
+        <label for="specialist"><b>specialist</b></label>
+        <input type="text" placeholder="specialist" name="specialist" class="specialist"   />
+
+        <label for="address"><b> address</b></label>
+        <input type="text" placeholder="address" name="address" class="address" />
+
+        <button type="submit">Submit</button>
+
+
+    </div>
+
+  </form>
+{% endblock content %}

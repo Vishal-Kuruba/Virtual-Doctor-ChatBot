@@ -1,0 +1,9 @@
+bot : Hi There! I am a medical chatbot. You can begin conversation by typing in a message and pressing enter.
+user : hi
+bot : - Hello. How are you feeling today?
+user : im cold
+bot : - okay. your age has been stored. Which city do you live in?
+user : bangalore
+bot : - good to know. how may i assist you then?
+user : have cold
+bot : - You should take a sudafed tablet after your meal.

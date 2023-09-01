@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+
+    <title>Title</title>
+</head>
+<body>
+
+<div class="topnav">
+    <a href="about"><button>About</button></a>
+
+
+    <a href="user_login"><button onclick="document.getElementById('id01').style.display='block'">User</button></a>
+
+    <a href="doctor_login"><button onclick="document.getElementById('id02').style.display='block'">Doctor</button></a>
+
+    <a  href="/home"><button class="active">Home</button></a>
+
+</div>
+
+          {% block content %}{% endblock %}
+
+
+</body>
+</html>
